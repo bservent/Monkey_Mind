@@ -17,16 +17,19 @@
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="masthead mb-auto">
     <div class="inner">
-      <nav class="nav nav-masthead justify-content-center">
-        <a class="nav-link active" href="#">Browse</a>
+      <nav class="nav nav-masthead justify-content-center" >
+        <div class="nav">
+            <a  id="nav" class="nav-link active" href="#">Browse</a>
+        </div>
         <a class="nav-link" href="#">Signin</a>
+    
       </nav>
     </div>
   </header>
 
   <main role="main" class="inner cover">
-     <div>
-        <img src="{% static "/images/soul.png" %}" alt="logo" />
+     <div class="image-container">
+        <img class="logo" src="{% static "/images/soul.png" %}" alt="logo" />
     </div>
     <h1 class="cover-heading">Monkey. Mind.</h1>
     <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam neque eveniet cum placeat non exercitationem dolor sit. Deserunt atque fuga rem, magni molestias doloribus eius aspernatur nihil repellendus quae doloremque?</p>
