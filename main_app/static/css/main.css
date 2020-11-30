@@ -75,7 +75,7 @@ a:hover {
 } 
 
 .title-border {
-    border-top: solid #989E9E;
+    border-top: 2px solid #989E9E;
     border-radius: 4%;
     width: 17%;
     margin-top: 0rem;
@@ -92,15 +92,20 @@ a:hover {
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;
-  color:#F6FAFA;
+  color:;
 }
 
 .site-footer h6 {
-  color: #313A3C;
+  color: #F6FAFA;
   font-size:16px;
   text-transform:uppercase;
   margin-top:5px;
-  letter-spacing:2px
+  letter-spacing:2px;
+  opacity: .8;
+}
+
+.text-justify {
+  color: #313A3C;
 }
 
 .footer-links
@@ -111,6 +116,7 @@ a:hover {
 .footer-links li
 {
   display:block
+  color: #313A3C;
 }
 
 .footer-hr {
@@ -155,20 +161,20 @@ a:hover {
 }
 
 .facebook {
-  max-width: 40px;
-  max-height: 40px;
+  max-width: 35px;
+  max-height: 35px;
   margin-right: .8em;
 }
 
 .twitter {
-  max-width: 40px;
-  max-height: 40px;
+  max-width: 35px;
+  max-height: 35px;
   margin-right: .8em;
 }
 
 .instagram {
-  max-width: 40px;
-  max-height: 40px;
+  max-width: 35px;
+  max-height: 35px;
 }
 
 
