@@ -1,0 +1,20 @@
+.card-container {
+    border-radius: 25px;
+    background: #343A3C;
+    padding-bottom: 4rem;
+  }
+
+.inner-cover {
+    margin: 6rem 10rem 6rem 10rem;
+}
+
+.card {
+    margin: 0 4rem 4rem 4rem;
+}
+
+.category {
+    color:  #F6FAFA;
+    margin: 2rem 2rem 0rem 4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
