@@ -12,8 +12,11 @@ body {
     margin: 0;
     opacity: .9;
     min-height: 100wh;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-image: linear-gradient(to bottom right, #34ddd3, #FFC0CB); 
+    background-image: url("../images/cloud3.png"), linear-gradient(to bottom right, #34ddd3, #FFC0CB), url("../images/cloud3.png"); 
+
+
 }
 
 header {
@@ -77,7 +80,7 @@ a:hover {
 .title-border {
     border-top: 2px solid #989E9E;
     border-radius: 4%;
-    width: 17%;
+    width: 19%;
     margin-top: 0rem;
     margin-bottom: 0rem; 
 }
@@ -164,17 +167,20 @@ a:hover {
   max-width: 35px;
   max-height: 35px;
   margin-right: .8em;
+  opacity: .9;
 }
 
 .twitter {
   max-width: 35px;
   max-height: 35px;
   margin-right: .8em;
+  opacity: .9;
 }
 
 .instagram {
   max-width: 35px;
   max-height: 35px;
+  opacity: .9;
 }
 
 
