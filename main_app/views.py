@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Meditation, User, Category
 
 
+#-----------------------------------------------------------------------------#
+#                                S T A T I C                                  #
+#-----------------------------------------------------------------------------#
 
 def home(request):
     return render(request, 'home.html')
@@ -14,3 +17,20 @@ def register(request):
 
 def signin(request):
     return render(request, 'signin.html')
+
+#-----------------------------------------------------------------------------#
+#                                C A T E G O R Y                              #
+#-----------------------------------------------------------------------------#
+def categories_browse(request):
+    categories = Category.objects.all()
+    return render(request, 'browse.html', { 'categories' : categories})
+
+
+#-----------------------------------------------------------------------------#
+#                                P R O F I L E                                #
+#-----------------------------------------------------------------------------#
+
+
+#-----------------------------------------------------------------------------#
+#                                M E D I T A T I O N                          #
+#-----------------------------------------------------------------------------#
