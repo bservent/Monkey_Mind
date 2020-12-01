@@ -31,13 +31,30 @@ a:hover {
     background-color:#AC92F5 !important;
     border-radius: 5% !important;
     transition: .6s;
+}
 
+.intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #35393C;
+  border-radius: 25px;
+  max-width: 60%;
+  color: #F6FAFA;
+  opacity: 8.5;
+  margin: 2em 2em 2em 18em;
+  border: 2px solid #989E9E;
+}
+
+h3 {
+  margin: 1em 1em 1em 1em !important;
 }
 
 .image-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
 }
@@ -97,7 +114,6 @@ a:hover {
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;
-  color:;
 }
 
 .site-footer h6 {

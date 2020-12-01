@@ -13,8 +13,6 @@ body {
     background-image: url("../images/cloud3.png"), linear-gradient(to bottom right, #34ddd3, #FFC0CB); 
 }
 
-
-
  footer a {
     color: #343A3C !important;
     font-size: 18px;
@@ -51,7 +49,6 @@ nav {
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;
-  color:;
 }
 
 .site-footer h6 {
