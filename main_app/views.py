@@ -25,7 +25,6 @@ def categories_browse(request):
     categories = Category.objects.all()
     return render(request, 'browse.html', { 'categories' : categories})
 
-
 #-----------------------------------------------------------------------------#
 #                                P R O F I L E                                #
 #-----------------------------------------------------------------------------#

@@ -1,42 +1,45 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
-<body>
-    {% block content %}
+{% block content %}
     <main role="main" class="inner-cover">
       <div class="card-container">
       <div class="category">
-        <h3>Category</h3>
+        {% for category in categories %}
+        <a href="{% url 'categories_' category.id %}">
+        <h3>{{ category.id.name }}</h3>
+        {% endfor %}
       </div>
         <div class="card-group">
             <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
+                <img class="card-img-top" src="{% static '/images/sky.png' %}" alt="Card image cap">
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h5 class="card-title">{{ meditation.name }}</h5>
+                <p class="card-text">{{ meditation.content }}</p>
                 </div>
                 <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
+                <small class="text-muted">{{ meditation.created_on }}</small>
                 </div>
             </div>
             <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
+                <img class="card-img-top" src="{% static '/images/sky.png' %}" alt="Card image cap">
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <h5 class="card-title">{{ meditation.name }}</h5>
+                <p class="card-text">{{ meditation.content }}</p>
                 </div>
                 <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
+                <small class="text-muted">{{ meditation.created_on }}</small>
                 </div>
             </div>
             <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
+                <img class="card-img-top" src="{% static '/images/sky.png' %}" alt="Card image cap">
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                <h5 class="card-title">{{ meditation.name }}</h5>
+                <p class="card-text">{{ meditation.content }}</p>
                 </div>
                 <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
+                <small class="text-muted">{{ meditation.created_on }}</small>
                 </div>
             </div>
         </div>
@@ -44,5 +47,3 @@
     </main>
 
   {% endblock %}
-</body>
-</html>
