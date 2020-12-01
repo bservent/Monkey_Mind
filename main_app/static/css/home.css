@@ -40,15 +40,15 @@ a:hover {
   align-items: center;
   background-color: #35393C;
   border-radius: 25px;
-  max-width: 60%;
   color: #F6FAFA;
-  opacity: 8.5;
-  margin: 2em 2em 2em 18em;
+  max-width: 66%;
+  opacity: 8;
+  margin: 2em 2em 2em 15em;
   border: 2px solid #989E9E;
 }
 
 h3 {
-  margin: 1em 1em 1em 1em !important;
+  margin: 1em !important;
 }
 
 .image-container {

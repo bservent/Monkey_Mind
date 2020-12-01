@@ -8,3 +8,9 @@ def home(request):
 
 def browse(request):
     return render(request, 'browse.html')
+
+def register(request):
+    return render(request, 'register.html')
+
+def signin(request):
+    return render(request, 'signin.html')

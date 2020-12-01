@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Meditation, Category, Profile
+
+admin.site.register(Meditation)
+admin.site.register(Category)
+admin.site.register(Profile)

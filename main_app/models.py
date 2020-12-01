@@ -26,7 +26,7 @@ class Meditation(models.Model):
 
 
 
-class User(models.Model):
+class Profile(models.Model):
     name = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     login = models.DateField(auto_now_add=True)
