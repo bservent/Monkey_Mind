@@ -1,5 +1,5 @@
 h3 {
-    margin: 1em 0em 1em 2.3em;
+    margin: 1em 0em 0em 2.3em;
 }
 
 .inner-cover {
@@ -20,7 +20,7 @@ h3 {
 .card-container {
     border-radius: 25px;
     background: #343A3C;
-    padding-bottom: 4rem;
+    padding-bottom: 3.0rem;
   }
 
 .card-body {
