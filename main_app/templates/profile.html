@@ -2,7 +2,6 @@
 {% load static %}
 {% block content %}
 <div class= "container-fluid text-center pt-5">
-  <h1>Profile Page</h1>
 </div>
 
 <div class= "container-fluid text-center">
@@ -15,7 +14,7 @@
         <div class="card-body">
           <ul class="good-bye-padding">
           {% for meditation in meditations %}
-          <li class="meditation-lists"><a href="{% url 'meditation_detail' meditation.id %}">{{ meditation.name }}</a></li>
+          {% comment %} <li class="meditation-lists"><a href="{% url 'meditation_detail' meditation.id %}">{{ meditation.name }}</a></li> {% endcomment %}
           {% empty %}
             <li class="meditation-lists">No meditations have been added yet.</li>
           {% endfor %}
@@ -26,10 +25,10 @@
     <div class= "col-xl-6">
       <div class="card pt-4">
         <div class="card-title">
-          <h2>Profile</h2>
+          <h2>Meditator</h2>
         </div>
         <div class="card-top">
-           Meditator: {% if request.user.profile.imageURL.url != NULL %}
+            {% if request.user.profile.imageURL.url != NULL %}
           <img src="{{ request.user.profile.imageURL.url }}" class="img-fluid">
           {% else %}
             <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
@@ -37,10 +36,10 @@
         </div>
         <div class="card-body">
           <div>
-            <span>Username: {{ profile.name }}</span>
+            <span>Username: {{ request.user }}</span>
           </div>
           <div>
-            <span>Joined on: {{ profile.login }}</span>
+            <span>Joined on: {{ request.user.login }}</span>
           </div>
           {% comment %} <a href="{% url 'profile_edit' user.id %}" method="POST">Edit</a> {% endcomment %}
         </div>

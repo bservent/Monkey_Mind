@@ -35,11 +35,10 @@ def categories_browse(request):
 #-----------------------------------------------------------------------------#
 
 def profile(request, user_id):
-    return render(request,'profile.html')
-    # meditations = Meditation.objects.filter(profile=request.user.id)
-    # profile = Profile.objects.filter(user=request.user)
-    # context = { 'meditations' : meditations, 'profile' : request.user, 'profile' :profile }
-    # return render(request, 'profile.html', context)
+    meditations = Meditation.objects.filter(user=request.user.id)
+    # profiles = Profile.objects.filter(user=request.user)
+    context = { 'meditations' : meditations, 'profile' : request.user, 'profile' :profile }
+    return render(request, 'profile.html', context)
 
 #-----------------------------------------------------------------------------#
 #                                M E D I T A T I O N                          #
