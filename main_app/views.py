@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Meditation, User, Category
+from .models import Meditation, Profile, Category
+from main_app.forms import Profile_Form
+from django.http import HttpResponse
 
 
 #-----------------------------------------------------------------------------#
@@ -36,10 +38,27 @@ def categories_browse(request):
 
 def profile(request, user_id):
     meditations = Meditation.objects.filter(user=request.user.id)
-    # profiles = Profile.objects.filter(user=request.user)
+    profiles = Profile.objects.filter(user=request.user)
     context = { 'meditations' : meditations, 'profile' : request.user, 'profile' :profile }
     return render(request, 'profile.html', context)
 
+def create_profile(request, user_id):
+    error_message=''
+    if request.method == 'POST':
+        profile_form = Profile_Form(request.POST, request.FILES, instance = request.user.profile)
+        if profile_form.is_valid():
+            profile_form.save()
+            return redirect('profile')
+        else:
+            error_message='Invalid sign-up try again'
+    else: 
+        profile_form = Profile_Form()
+    
+        # context = {'profile_form': profile_form}
+
+        # return render(request, 'create_profile.html', context)
+
+        return render(request, 'create_profile.html', {'profile_form': profile_form})
 #-----------------------------------------------------------------------------#
 #                                M E D I T A T I O N                          #
 #-----------------------------------------------------------------------------#
