@@ -56,10 +56,20 @@ def create_profile(request, user_id):
     else: 
         # profile_form = Profile_Form(instance=request.user.profile)
         profile_form = Profile_Form()
-
         context = {'profile_form': profile_form}
-
         return render(request, 'create_profile.html', context)
+
+def edit_profile(request, profile_id):
+    sel_profile = Profile.objects.get(id=profile_id)
+    if request.method == 'POST':
+        profile_form = Profile_Form(request.POST, instance=sel_profile)
+        if profile_form.is_valid():
+            updated_profile = profile_form.save()
+            return redirect('profile', updated_profile.id)
+    else:
+        profile_form = Profile_Form(instance=sel_profile)
+        context = { 'profile' : sel_profile, 'profile_form': profile_form }
+        return render(request, 'edit_profile.html', context)
 
 #-----------------------------------------------------------------------------#
 #                                M E D I T A T I O N                          #
