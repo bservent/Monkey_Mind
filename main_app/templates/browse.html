@@ -6,43 +6,46 @@
     <main role="main" class="inner-cover">
       <div class="card-container">
       <div class="category">
-        {% for category in categories %}
-        <a href="{% url 'categories_' category.id %}">
-        <h3>{{ category.id.name }}</h3>
-        {% endfor %}
-      </div>
-        <div class="card-group">
+        {% for category in meditations_data %}
+        {% comment %} <a href="{% url 'categories' category.id %}"> {% endcomment %}
+        {% if category.meditations|length >= 3 %}
+        <h3>{{ category.category_name }}</h3>
+         <div class="card-group">
             <div class="card">
-                <img class="card-img-top" src="{% static '/images/sky.png' %}" alt="Card image cap">
+                {% comment %} <img class="card-img-top" src="{% static '/images/sky.png' %}" alt="Card image cap"> {% endcomment %}
                 <div class="card-body">
-                <h5 class="card-title">{{ meditation.name }}</h5>
-                <p class="card-text">{{ meditation.content }}</p>
+                <h5 class="card-title">{{ category.meditations.0.name }}</h5>
+                <p class="card-text">{{ category.meditations.0.content }}</p>
                 </div>
                 <div class="card-footer">
-                <small class="text-muted">{{ meditation.created_on }}</small>
+                <small class="text-muted">{{ category.meditation.0.created_on }}</small>
                 </div>
             </div>
             <div class="card">
-                <img class="card-img-top" src="{% static '/images/sky.png' %}" alt="Card image cap">
+                {% comment %} <img class="card-img-top" src="{% static '/images/sky.png' %}" alt="Card image cap"> {% endcomment %}
                 <div class="card-body">
-                <h5 class="card-title">{{ meditation.name }}</h5>
-                <p class="card-text">{{ meditation.content }}</p>
+                <h5 class="card-title">{{ category.meditations.0.name }}</h5>
+                <p class="card-text">{{ category.meditations.0.content }}</p>
                 </div>
                 <div class="card-footer">
-                <small class="text-muted">{{ meditation.created_on }}</small>
+                <small class="text-muted">{{ category.meditation.0.created_on }}</small>
                 </div>
             </div>
             <div class="card">
-                <img class="card-img-top" src="{% static '/images/sky.png' %}" alt="Card image cap">
+                {% comment %} <img class="card-img-top" src="{% static '/images/sky.png' %}" alt="Card image cap"> {% endcomment %}
                 <div class="card-body">
-                <h5 class="card-title">{{ meditation.name }}</h5>
-                <p class="card-text">{{ meditation.content }}</p>
+                <h5 class="card-title">{{ category.meditations.0.name }}</h5>
+                <p class="card-text">{{ category.meditations.0.content }}</p>
                 </div>
                 <div class="card-footer">
-                <small class="text-muted">{{ meditation.created_on }}</small>
+                <small class="text-muted">{{ category.meditation.0.created_on }}</small>
                 </div>
             </div>
         </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+    
       </div>
     </main>
 

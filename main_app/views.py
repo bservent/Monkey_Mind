@@ -9,9 +9,6 @@ from .models import Meditation, User, Category
 def home(request):
     return render(request, 'home.html')
 
-def browse(request):
-    return render(request, 'browse.html')
-
 def register(request):
     return render(request, 'register.html')
 
@@ -23,7 +20,15 @@ def signin(request):
 #-----------------------------------------------------------------------------#
 def categories_browse(request):
     categories = Category.objects.all()
-    return render(request, 'browse.html', { 'categories' : categories})
+
+    meditations_data = []
+    for category in categories:
+        meditations = Meditation.objects.filter(category_id=category.id)
+        category_data = { 'category_name' : category.name, 'meditations' : meditations }
+        meditations_data.append(category_data)
+        print(meditations[0].name)
+    return render(request, 'browse.html', { 'meditations_data' : meditations_data })
+
 
 #-----------------------------------------------------------------------------#
 #                                P R O F I L E                                #
