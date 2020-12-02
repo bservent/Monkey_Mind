@@ -27,15 +27,19 @@ def categories_browse(request):
         category_data = { 'category_name' : category.name, 'meditations' : meditations }
         meditations_data.append(category_data)
         print(meditations[0].name)
-    return render(request, 'browse.html', { 'meditations_data' : meditations_data })
+        return render(request, 'browse.html', { 'meditations_data' : meditations_data })
 
 
 #-----------------------------------------------------------------------------#
 #                                P R O F I L E                                #
 #-----------------------------------------------------------------------------#
 
-def profile(request):
-    return render(request, 'profile.html')
+def profile(request, user_id):
+    return render(request,'profile.html')
+    # meditations = Meditation.objects.filter(profile=request.user.id)
+    # profile = Profile.objects.filter(user=request.user)
+    # context = { 'meditations' : meditations, 'profile' : request.user, 'profile' :profile }
+    # return render(request, 'profile.html', context)
 
 #-----------------------------------------------------------------------------#
 #                                M E D I T A T I O N                          #
