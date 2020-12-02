@@ -14,7 +14,16 @@
 
 .category {
     color:  #F6FAFA;
-    margin: 2rem 2rem 0rem 4rem;
+    margin: 2rem 2rem 0rem 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+}
+
+.card-body {
+    color:#222222;
+}
+
+.card-img-top {
+    max-width: 100%;
+    max-height: auto;
 }
