@@ -52,13 +52,12 @@ def create_profile(request, user_id):
         else:
             error_message='Invalid sign-up try again'
     else: 
-        profile_form = Profile_Form()
-    
-        # context = {'profile_form': profile_form}
+        profile_form = Profile_Form(instance=request.user.profile)
 
-        # return render(request, 'create_profile.html', context)
+        context = {'profile_form': profile_form}
 
-        return render(request, 'create_profile.html', {'profile_form': profile_form})
+        return render(request, 'create_profile.html', context)
+
 #-----------------------------------------------------------------------------#
 #                                M E D I T A T I O N                          #
 #-----------------------------------------------------------------------------#
