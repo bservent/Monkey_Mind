@@ -1,9 +1,6 @@
-.card-container {
-    border-radius: 25px;
-    background: #343A3C;
-    padding-bottom: 4rem;
-  }
-
+h3 {
+    margin: 1em 0em 1em 2.3em;
+}
 .inner-cover {
     margin: 6rem 10rem 6rem 10rem;
 }
@@ -13,11 +10,17 @@
 }
 
 .category {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
     color:  #F6FAFA;
-    margin: 2rem 2rem 0rem 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
 }
+
+.card-container {
+    border-radius: 25px;
+    background: #343A3C;
+    padding-bottom: 4rem;
+  }
 
 .card-body {
     color:#222222;
@@ -25,5 +28,6 @@
 
 .card-img-top {
     max-width: 100%;
-    max-height: auto;
+    max-height: 60%;
 }
+
