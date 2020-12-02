@@ -34,6 +34,8 @@ def categories_browse(request):
 #                                P R O F I L E                                #
 #-----------------------------------------------------------------------------#
 
+def profile(request):
+    return render(request, 'profile.html')
 
 #-----------------------------------------------------------------------------#
 #                                M E D I T A T I O N                          #
