@@ -47,12 +47,15 @@ def create_profile(request, user_id):
     if request.method == 'POST':
         profile_form = Profile_Form(request.POST, request.FILES, instance = request.user.profile)
         if profile_form.is_valid():
-            profile_form.save()
-            return redirect('profile')
+            new_profile = profile_form.save()
+            new_profile.user = request.user
+            new_profile.save()
+            return redirect('profile', new_profile.id)
         else:
             error_message='Invalid sign-up try again'
     else: 
-        profile_form = Profile_Form(instance=request.user.profile)
+        # profile_form = Profile_Form(instance=request.user.profile)
+        profile_form = Profile_Form()
 
         context = {'profile_form': profile_form}
 
@@ -61,3 +64,6 @@ def create_profile(request, user_id):
 #-----------------------------------------------------------------------------#
 #                                M E D I T A T I O N                          #
 #-----------------------------------------------------------------------------#
+
+def meditation_detail(request, meditation_id):
+    return render(request, 'meditation_detail.html') 

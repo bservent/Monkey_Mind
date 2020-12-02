@@ -28,7 +28,7 @@ class Meditation(models.Model):
 
 class Profile(models.Model):
     name = models.CharField(max_length=100)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     login = models.DateField(auto_now_add=True)
     imageURL = models.ImageField(upload_to = 'profile_image', blank=True, default = '', null = True)
 

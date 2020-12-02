@@ -3,8 +3,7 @@
 
 {% block content %}
 
-{% comment %} <form method="POST" action="{% url 'create_profile' profile.id %}"> {% endcomment %}
-<form method="POST">
+<form method="POST" action="{% url 'create_profile' user.id %}"> 
   {% csrf_token %}
   {{ profile_form.as_p }}
   <button type="submit" class="btn-info">Create Profile</button>
