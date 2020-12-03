@@ -61,7 +61,7 @@ def create_profile(request, user_id):
         return render(request, 'create_profile.html', context)
 
 def edit_profile(request, user_id):
-    sel_profile = Profile.objects.get(id=profile.id)
+    sel_profile = Profile.objects.get(user_id=user_id)
     if request.method == 'POST':
         profile_form = Profile_Form(request.POST, instance=sel_profile)
         if profile_form.is_valid():
@@ -73,7 +73,8 @@ def edit_profile(request, user_id):
         return render(request, 'edit_profile.html', context)
 
 def delete_profile(request, user_id):
-    Profile.objects.get(id=user.id).delete()
+    print(user_id)
+    Profile.objects.get(user_id=user_id).delete()
     return redirect('/')
 
 #-----------------------------------------------------------------------------#
@@ -82,3 +83,16 @@ def delete_profile(request, user_id):
 
 def meditation_detail(request, meditation_id):
     return render(request, 'meditation_detail.html') 
+
+def add_collecting(request, meditation_id):
+    form = CollectingForm(request.POST)
+    if form.is_valid():
+        add_collecting = form.save(commit=False)
+        add_collecting.plant_id = plant_id
+        add_collecting.save()
+    return redirect('plants_detail', plant_id=plant_id)
+    
+def delete_collecting(request, collecting_id, plant_id):
+    #plant = Plant.objects.get(id=plant_id)
+    Collecting.objects.get(id=collecting_id).delete()
+    return redirect('plants_detail', plant_id=plant_id)

@@ -42,19 +42,23 @@
             <span>Joined on: {{ request.user.profile.login }}</span>
           </div>
           <div class="main"> 
-            <form method="POST" action="{% url 'delete_profile' profile.id %}"> 
-          {% comment %}   <form method="POST">  {% endcomment %}
+            <form method="GET" action="{% url 'delete_profile' request.user.id %}"> 
                 {% csrf_token %} 
-                Do you want to <span style="background-color: #FFFF00">DELETE</span> this Profile? 
+                Do you want to <span style="background-color: #FFFF00">DELETE</span> this profile? 
                 <input type="submit" value="Yes" /> 
                 <a href="/browse">Cancel </a> 
             </form> 
         </div> 
-
         <div class="card-action">
+            <form method="GET" action="{% url 'edit_profile' request.user.id %}"> 
+                {% csrf_token %} 
+                Do you want to <span style="background-color: #FFFF00">EDIT</span> this profile? 
+                <input type="submit" value="Yes" /> 
+                <a href="/browse">Cancel </a> 
+            </form> 
             Do you want to <input type="submit" value="Edit Profile" />?
         </div> 
-          <a href="{% url 'edit_profile' profile.id %}">Edit Profile</a> 
+          <a href="{% url 'edit_profile' request.user.id %}"></a> 
         </div>
       </div>
     </div>
