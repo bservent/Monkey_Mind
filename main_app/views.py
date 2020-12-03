@@ -45,6 +45,7 @@ def profile(request, user_id):
 def create_profile(request, user_id):
     error_message=''
     if request.method == 'POST':
+        Profile.objects.get_or_create(user=request.user)
         profile_form = Profile_Form(request.POST, request.FILES, instance = request.user.profile)
         if profile_form.is_valid():
             new_profile = profile_form.save()

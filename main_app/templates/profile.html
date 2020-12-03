@@ -14,7 +14,7 @@
         <div class="card-body">
           <ul class="good-bye-padding">
           {% for meditation in meditations %}
-          {% comment %} <li class="meditation-lists"><a href="{% url 'meditation_detail' meditation.id %}">{{ meditation.name }}</a></li> {% endcomment %}
+          {% comment %} <li class="meditation-lists"><a href="{% url 'meditation_detail' meditation.id %}">{{ meditation.name }}</a></li>  {% endcomment %}
           {% empty %}
             <li class="meditation-lists">No meditations have been added yet.</li>
           {% endfor %}
@@ -36,12 +36,12 @@
         </div>
         <div class="card-body">
           <div>
-            <span>Username: {{ request.user }}</span>
+            <span>Username: {{ request.profile.name }}</span>
           </div>
           <div>
             <span>Joined on: {{ request.user.login }}</span>
           </div>
-          {% comment %} <a href="{% url 'profile_edit' user.id %}" method="POST">Edit</a> {% endcomment %}
+          {% comment %} <a href="{% url 'edit_profile' profile.id %}" method="POST">Edit Profile</a>  {% endcomment %}
         </div>
       </div>
     </div>
