@@ -50,15 +50,8 @@
             </form> 
         </div> 
         <div class="card-action">
-            <form method="GET" action="{% url 'edit_profile' request.user.id %}"> 
-                {% csrf_token %} 
-                Do you want to <span style="background-color: #FFFF00">EDIT</span> this profile? 
-                <input type="submit" value="Yes" /> 
-                <a href="/browse">Cancel </a> 
-            </form> 
-            Do you want to <input type="submit" value="Edit Profile" />?
+            Do you want to <a href="{% url 'edit_profile' request.user.id %}"><button>EDIT</button></a> this profile?
         </div> 
-          <a href="{% url 'edit_profile' request.user.id %}"></a> 
         </div>
       </div>
     </div>
