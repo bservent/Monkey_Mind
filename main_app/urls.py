@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 from django.conf.urls.static import static
 
@@ -9,6 +9,7 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('signin/', views.signin, name='signin'),
     path('create_profile/<int:user_id>/', views.create_profile, name='create_profile'),
-    path('profile/<int:profile_id>/edit', views.edit_profile, name='edit_profile'),
+    path('profile/<int:profile_id>/edit/', views.edit_profile, name='edit_profile'),
+    path('profile/<int:profile_id>/delete/', views.delete_profile, name='delete_profile'),
     path('profile/<int:user_id>/', views.profile, name='profile')
 ]

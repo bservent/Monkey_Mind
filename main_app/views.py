@@ -72,6 +72,11 @@ def edit_profile(request, profile_id):
         context = { 'profile' : sel_profile, 'profile_form': profile_form }
         return render(request, 'edit_profile.html', context)
 
+def delete_profile(request, profile_id):
+    if request.method == 'POST':
+        Profile.objects.get(id=profile_id).delete()
+        return redirect('/')
+
 #-----------------------------------------------------------------------------#
 #                                M E D I T A T I O N                          #
 #-----------------------------------------------------------------------------#
