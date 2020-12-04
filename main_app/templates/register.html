@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<div class="row pt-5 mt-5 justify-content-center">
-  <div class="card registration-card text-center">
+<main class="main">
+<div id="header" class="row pt-5 mt-5 justify-content-center">
+  <div id="header" class="card registration-card text-center">
     <h3 id="header" class="card-body register-header">Sign-up and start taming your <u>Monkey Mind</u> today!</h3>
   </div>
 </div>
@@ -12,7 +12,7 @@
     <div class="col-lg-6 registration-column text-center">
       <div class="card registration-card">
       <h3 id="register" class="card-title register-header">Register Your Account</h3>
-      <form id="account" method="POST" action="{% url 'signin' %}" class="registration-form mt-4">
+      <form id="account" method="POST" class="registration-form mt-4">
         {% csrf_token %}
         <div class="input-group mb-4">
           <input type="text" placeholder="USERNAME" name="username" required> 
@@ -27,8 +27,7 @@
             <p>{{ error_message }}</p>
           {% endif %}
           <div class="d-flex justify-content-center mt-3 login_container">
-            <input class="btn btn-dark" type="submit" value="SIGNIN">
-            <input type="hidden" name="next" value="">
+            <a class="signin-button" href="{% url 'create_profile' user.id %}">Signin</a>
           </div>
         </form>
       </div>
@@ -50,6 +49,6 @@
       </div>
     </div>
   </div>
-
+</main>
 
 {% endblock content %}

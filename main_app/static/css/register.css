@@ -31,7 +31,7 @@
 }
 
 #header {
-    margin: 0;
+    margin: 0 0 0 -1rem;
 }
 
 #register {
@@ -42,4 +42,16 @@
 #account {
     padding-top: 1rem;
     margin: -15%;
+}
+
+.main {
+    margin-left: 8rem;
+}
+
+.signin-button {
+    color: purple;
+    border: solid 2px black;
+    padding: 2px;
+    opacity: .9;
+    border-radius: 3px;
 }
