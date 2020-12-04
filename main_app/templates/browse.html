@@ -16,10 +16,10 @@
                 <h5 class="card-title">{{ category.meditations.0.name }}</h5>
                 <p class="card-text">{{ category.meditations.0.content }}</p>
                 <div>
-                <form method="POST" action="{% url 'add_meditation' user.id category.meditations.0.id %}"> 
-                    {% csrf_token %}
                     <button type="submit" class="btn-info">ADD</button>
-                </form>
+              {% comment %}   <form method="POST" action="{% url 'add_meditation' user.id category.meditations.0.id %}"> 
+                    {% csrf_token %}
+                </form> {% endcomment %}
                 </div>
                 </div>
                 <div class="card-footer">

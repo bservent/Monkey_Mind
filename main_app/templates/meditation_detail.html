@@ -5,10 +5,10 @@
 
 
   <div class="meditation-name">
-      <h2 class="text-light">{{ meditation.name }}</h2>
+      <h2 class="text-light">{{ request.category.meditation.name }}</h2>
   </div>
   <div>
-    <img src="{% static 'images/meditations/meditation4.jpg' %}">
+    <img class="meditation-pic" src="{% static 'images/meditations/meditation4.jpg' %}">
   </div>
   <div>
     <div class="row">
@@ -17,14 +17,13 @@
           {% for meditation in category.meditation_set.all %}
           <a href="{% url 'meditation_detail' meditation.id %}">
             <ul>
-              {{ meditation.content }}
+              {{ request.meditation.content }}
             </ul>
           </a>
           {% endfor %}
         </span>
       </div>
-    </div>
-  </div>
+   
 
 
 {% endblock %}  

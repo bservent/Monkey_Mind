@@ -73,7 +73,6 @@ def edit_profile(request, user_id):
         return render(request, 'edit_profile.html', context)
 
 def delete_profile(request, user_id):
-    print(user_id)
     Profile.objects.get(user_id=user_id).delete()
     return redirect('/')
 
@@ -81,16 +80,21 @@ def delete_profile(request, user_id):
 #                                M E D I T A T I O N                          #
 #-----------------------------------------------------------------------------#
 
-def meditation_detail(request, meditation_id):
-    return render(request, 'meditation_detail.html') 
+# def meditation_detail(request, meditation_id):
+#     meditation = Meditation.objects.get(id=meditation_id)
+#     return render(request, 'meditation_detail.html') 
+# def meditation_detail(request, meditation_id):
+#     meditations = Meditation.objects.get(meditation_id=request.meditation)
+#     context = { 'meditations' : meditations }
+#     return render(request, 'profile.html', context)
 
-def add_meditation(request, user_id, meditation_id):
-    profile = Profile.objects.get(user_id=user_id)
-    print(meditation_id)
-    meditation = Meditation.objects.get(id=meditation_id)
-    profile.meditation.add(meditation)
-    return redirect('/browse')
+# def add_meditation(request, user_id, meditation_id):
+#     profile = Profile.objects.get(user_id=user_id)
+#     print(meditation_id)
+#     meditation = Meditation.objects.get(id=meditation_id)
+#     profile.meditation.add(meditation)
+#     return redirect('/browse')
     
-def delete_meditation(request, meditation_id):
-    Meditatioin.objects.get(meditation_id=meditation_id).delete()
-    return redirect('profile')
+# def delete_meditation(request, meditation_id):
+#     Meditatioin.objects.get(meditation_id=meditation_id).delete()
+#     return redirect('profile')

@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     padding: 0;
     margin: 0;
     opacity: .9;
@@ -13,7 +13,7 @@ body {
     background-image: url("../images/cloud3.png"), linear-gradient(to bottom right, #34ddd3, #FFC0CB); 
 }
 
- footer a {
+footer a {
     color: #343A3C !important;
     font-size: 18px;
 }
@@ -82,8 +82,7 @@ nav {
   margin-left: 12rem;
 }
 
-.copyright-text
-{
+.copyright-text{
   margin:0
 }
 @media (max-width:991px)
