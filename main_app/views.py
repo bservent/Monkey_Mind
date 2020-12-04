@@ -63,7 +63,7 @@ def create_profile(request, user_id):
 def edit_profile(request, user_id):
     sel_profile = Profile.objects.get(user_id=user_id)
     if request.method == 'POST':
-        profile_form = Profile_Form(request.POST, instance=sel_profile)
+        profile_form = Profile_Form(request.POST, request.FILES, instance=sel_profile)
         if profile_form.is_valid():
             updated_profile = profile_form.save()
             return redirect('profile', updated_profile.id)
