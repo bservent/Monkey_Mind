@@ -1,0 +1,7 @@
+ul {
+    list-style: none;
+}
+  
+.meditation-lists:before {
+    content: '✓';
+}

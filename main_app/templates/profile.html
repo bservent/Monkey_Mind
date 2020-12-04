@@ -16,7 +16,7 @@
           {% for meditation in meditations %}
           <li class="meditation-lists"><a href="{% url 'meditation_detail' meditation.id %}">{{ meditation.name }}</a></li> 
           {% empty %}
-            <li class="meditation-lists">No meditations have been added yet.</li>
+            <li class="meditation-lists"> No meditations have been added yet.</li>
           {% endfor %}
           </ul>
         </div>
@@ -50,7 +50,7 @@
             </form> 
         </div> 
             <div class="card-action">
-                Do you want to<a href="{% url 'edit_profile' request.user.id %}"><button>EDIT</button></a>this profile?
+                Do you want to<a href={% url 'edit_profile' request.user.id %}><button>EDIT</button></a>this profile?
             </div> 
         </div>
       </div>

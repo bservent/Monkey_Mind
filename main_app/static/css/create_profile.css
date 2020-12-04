@@ -4,5 +4,13 @@
     align-items: center;
     border-radius: 25px;
     background: #343A3C;
-    padding-bottom: 3.0rem;
+    padding: 2rem 2rem 2rem 2rem;
+    color: #F6FAFA;
 }
+
+.container-form {
+    padding: 8rem 30rem 8rem 30rem;
+}
+
+
+
