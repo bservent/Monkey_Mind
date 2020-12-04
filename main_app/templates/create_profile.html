@@ -2,11 +2,14 @@
 {% load static %}
 
 {% block content %}
-
-<form method="POST" action="{% url 'create_profile' user.id %}"> 
-  {% csrf_token %}
-  {{ profile_form.as_p }}
-  <button type="submit" class="btn-info">Create Profile</button>
-</form>
+<div class="container">
+    <div class="inner-container">
+        <form method="POST" action="{% url 'create_profile' user.id %}"> 
+        {% csrf_token %}
+        {{ profile_form.as_p }}
+        <button type="submit" class="btn-info">Create Profile</button>
+        </form>
+    </div>
+</div>
 
 {% endblock %} 

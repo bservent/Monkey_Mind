@@ -22,14 +22,14 @@ def signin(request):
 #-----------------------------------------------------------------------------#
 def categories_browse(request):
     categories = Category.objects.all()
-
+    
     meditations_data = []
     for category in categories:
         meditations = Meditation.objects.filter(category_id=category.id)
         category_data = { 'category_name' : category.name, 'meditations' : meditations }
         meditations_data.append(category_data)
-        print(meditations[0].name)
-        return render(request, 'browse.html', { 'meditations_data' : meditations_data })
+        print(meditations_data)
+    return render(request, 'browse.html', { 'meditations_data' : meditations_data })
 
 
 #-----------------------------------------------------------------------------#
@@ -84,15 +84,12 @@ def delete_profile(request, user_id):
 def meditation_detail(request, meditation_id):
     return render(request, 'meditation_detail.html') 
 
-def add_collecting(request, meditation_id):
-    form = CollectingForm(request.POST)
-    if form.is_valid():
-        add_collecting = form.save(commit=False)
-        add_collecting.plant_id = plant_id
-        add_collecting.save()
-    return redirect('plants_detail', plant_id=plant_id)
+def assoc_meditation(request, user_id, meditation_id):
+    profile = Profile.objects.get(profile_id=profile_id)
+    meditation = Meditation.objects.get(meditation_id=meditation_id)
+    cat.toys.add(toy)
+    return redirect('detail', cat_id)
     
-def delete_collecting(request, collecting_id, plant_id):
-    #plant = Plant.objects.get(id=plant_id)
-    Collecting.objects.get(id=collecting_id).delete()
-    return redirect('plants_detail', plant_id=plant_id)
+def delete_meditation(request, meditation_id):
+    Meditatioin.objects.get(meditation_id=meditation_id).delete()
+    return redirect('profile')
