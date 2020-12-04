@@ -6,6 +6,10 @@ ul {
     content: '✓';
 }
 
+.link {
+    color: #4A34A0;
+}
+
 .alt-pic {
     max-width: 100%;
     max-height: auto;
