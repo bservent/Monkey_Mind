@@ -1,38 +1,36 @@
 {% extends 'base.html' %}
 {% block content %}
 
-                <div class="modal-header">
-                    <h3 class="mb-0">Login</h3>
-                    <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">&#xD7;</button>
-                </div>
-                <div class="modal-body py-4">
-                    <form class="form  mx-auto w-75" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST" action="{% url 'signin' %}">
-                    
-                    {% comment %} <form action="{% url 'login' %}" method="POST"> {% endcomment %}
-                        
-                        {% csrf_token %}
+    <div class="modal-header">
+        <h3 class="mb-0">Login</h3>
+    </div>
+    <div class="modal-body py-4">
+        <form class="form  mx-auto w-75" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST" action="{% url 'signin' %}">
+        
+        {% comment %} <form action="{% url 'login' %}" method="POST"> {% endcomment %}
+            
+            {% csrf_token %}
 
-                        <div class="form-group">
-                            <a href="{% url 'register' %}" class="float-right text-info h6">New user?</a>
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control form-control-lg" name="username" id="id_username" required>
-                            
-                        </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" class="form-control form-control-lg" name="password" id="id_password" required autocomplete="new-password">
-                        </div>
-                        <div class="form-group py-4">
-                            <button class="btn btn-outline-secondary btn-lg" data-dismiss="modal" aria-hidden="true">Cancel</button>
-                            
-                            {% comment %} {% csrf_token %}
-                            {{ form.as_p }} {% endcomment %}
-                            
-                            <input type="submit" class="btn btn-info btn-lg float-right" id="btnLogin" value="login">
-                            <input type="hidden" name="next" value="{{ next }}">
-                        </div>
-                    </form>
-                </div>
+
+            <div class="form-group">
+                <a href="{% url 'register' %}" class="float-right text-info h6">New user?</a>
+                <label for="username">Username</label>
+                <input type="text" class="form-control form-control-lg" name="username" id="id_username" required>
+                
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control form-control-lg" name="password" id="id_password" required autocomplete="new-password">
+            </div>
+
+                {% comment %} {% csrf_token %}
+                {{ form.as_p }} {% endcomment %}
+                
+                <input type="submit" class="btn btn-info btn-lg float-right" id="btnLogin" value="login">
+                <input type="hidden" name="next" value="{{ next }}">
+            </div>
+        </form>
+    </div>
 
 
 {% endblock content %}

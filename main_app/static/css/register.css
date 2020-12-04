@@ -1,0 +1,45 @@
+.registration-card {
+    align-items: center;
+    float: center;
+    padding: 0;
+}
+
+.info-span {
+    text-decoration: underline;
+}
+
+.signup-info {
+    padding: 1rem;
+    width: 50%;
+}
+
+  
+.signup-ol{
+    display:flex;
+    flex-direction: row;
+    justify-content: left;
+    display: inline;
+    list-style: none;
+    text-align: center;
+    padding-inline-start: 0 !important;
+}
+
+.signup-ol {
+    list-style: none;
+    text-align: center;
+    padding-inline-start: 0 !important;
+}
+
+#header {
+    margin: 0;
+}
+
+#register {
+    margin: 0;
+    padding-top: 1rem;
+}
+
+#account {
+    padding-top: 1rem;
+    margin: -15%;
+}
