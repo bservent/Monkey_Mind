@@ -84,11 +84,12 @@ def delete_profile(request, user_id):
 def meditation_detail(request, meditation_id):
     return render(request, 'meditation_detail.html') 
 
-def assoc_meditation(request, user_id, meditation_id):
-    profile = Profile.objects.get(profile_id=profile_id)
-    meditation = Meditation.objects.get(meditation_id=meditation_id)
-    cat.toys.add(toy)
-    return redirect('detail', cat_id)
+def add_meditation(request, user_id, meditation_id):
+    profile = Profile.objects.get(user_id=user_id)
+    print(meditation_id)
+    meditation = Meditation.objects.get(id=meditation_id)
+    profile.meditation.add(meditation)
+    return redirect('/browse')
     
 def delete_meditation(request, meditation_id):
     Meditatioin.objects.get(meditation_id=meditation_id).delete()

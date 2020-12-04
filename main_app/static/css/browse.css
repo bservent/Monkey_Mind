@@ -2,6 +2,12 @@ h3 {
     margin: 1em 0em 0em 2.3em;
 }
 
+button {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .inner-cover {
     margin: 6rem 10rem 6rem 10rem;
 }

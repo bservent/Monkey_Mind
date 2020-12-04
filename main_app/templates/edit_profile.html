@@ -4,7 +4,7 @@
 {% block content %}
 
 
-<form method="POST" enctype="multipart/form-data"> 
+<form method="POST" enctype="multipart/form-data" action="{% url 'profile' user.id %}"> 
   {% csrf_token %}
   {{ profile_form.as_p }}
   <button type="submit" class="btn-info">Update Profile</button>

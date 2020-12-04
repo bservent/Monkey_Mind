@@ -31,6 +31,7 @@ class Profile(models.Model):
     name = models.CharField(max_length=100)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     login = models.DateField(auto_now_add=True)
+    meditation = models.ForeignKey(Meditation, default = '', on_delete=models.CASCADE)
     imageURL = models.ImageField(upload_to = 'profile_image', blank=True, default = '', null = True)
 
     def __str__(self):
