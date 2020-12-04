@@ -58,51 +58,21 @@ Users will see input to signin or browse
 Users who need to create will be guided to registration page
 ![image](https://user-images.githubusercontent.com/69656339/101192111-6f05ea00-360f-11eb-86e3-4a9a040c0056.png)
 ![image](https://user-images.githubusercontent.com/69656339/101192244-a5dc0000-360f-11eb-8a75-65417da535e8.png)
-### Home Page
+### Browse Page
 
-Build out city database/log individual articles, title, data, submit to memory.
+Users will be able to browse categories with meditations
+![image](https://user-images.githubusercontent.com/69656339/101192634-34e91800-3610-11eb-9577-7c1e1e47041d.png)
+### Profile Page
 
-This will allow user to input Article and comment data to database, as well as have access to edit past Articles and comments.  These articles will be visible with hyperlinks to view article and comment details
-![image](public/images/landing.png)
-### Show Article Page
+Users will be able to add meditations to their profiles
+![image](https://user-images.githubusercontent.com/69656339/101192844-8691a280-3610-11eb-9ad5-f8e9af9885a3.png)
+### Meditation Detail
 
-Details each article by: (name, date/time, comments)
+Users will be able to view the meditation detail page and play meditations
+![image](https://user-images.githubusercontent.com/69656339/101192969-b5a81400-3610-11eb-81d2-1fe15aaf25d1.png)
 
-View 1
-![image](public/images/article_view.png)
 ## Data Models
 
-### User
-
-- userId
-- name
-- email
-- password
-- imgURL
-- joined on
-- current city
-
-
-### City
-
-- name
-- image
-
-
-### Article
-
-- title
-- content
-- created_on
-- author (FK)
-- city (FK)
-
-### Comment
-
-- name
-- email
-- body
-- created_on
-- article (FK)
+![image](https://user-images.githubusercontent.com/69656339/101193049-d6706980-3610-11eb-94d6-1a578b232fda.png)
 
 
