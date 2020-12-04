@@ -56,7 +56,8 @@ Users will see input to signin or browse
 ### Registration
 
 Users who need to create will be guided to registration page
-![image](public/images/registration.png)
+![image](https://user-images.githubusercontent.com/69656339/101192111-6f05ea00-360f-11eb-86e3-4a9a040c0056.png)
+![image](https://user-images.githubusercontent.com/69656339/101192244-a5dc0000-360f-11eb-8a75-65417da535e8.png)
 ### Home Page
 
 Build out city database/log individual articles, title, data, submit to memory.
