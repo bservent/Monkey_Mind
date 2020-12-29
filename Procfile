@@ -1,1 +1,1 @@
-web: gunicorn Monkey_Mind.wsgi
+web: gunicorn main_app.wsgi
