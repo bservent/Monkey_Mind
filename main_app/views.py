@@ -83,10 +83,10 @@ def delete_profile(request, user_id):
 # def meditation_detail(request, meditation_id):
 #     meditation = Meditation.objects.get(id=meditation_id)
 #     return render(request, 'meditation_detail.html') 
-# def meditation_detail(request, meditation_id):
-#     meditations = Meditation.objects.get(meditation_id=request.meditation)
-#     context = { 'meditations' : meditations }
-#     return render(request, 'profile.html', context)
+def meditation_detail(request, meditation_id):
+    # meditations = Meditation.objects.get(meditation_id=meditation_id)
+    # context = { 'meditations' : meditations }
+    return render(request, 'meditation_detail.html')
 
 # def add_meditation(request, user_id, meditation_id):
 #     profile = Profile.objects.get(user_id=user_id)
