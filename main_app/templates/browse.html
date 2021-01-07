@@ -27,8 +27,7 @@
                 </div>
             </div>
             <div class="card">
-                {% load static %}
-                <img class="card-img-top" src="{% static 'images/meditation2.png' %}" alt="Card image cap">
+                <img class="card-img-top" src="{% static '/images/meditation2.png' %}" alt="Card image cap">
                 <div class="card-body">
                 <h5 class="card-title">{{ category.meditations.1.name }}</h5>
                 <p class="card-text">{{ category.meditations.1.content }}</p>
