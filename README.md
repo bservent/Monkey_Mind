@@ -7,7 +7,6 @@ With different categories and meditation selections, Monkey. Mind. has meditatio
 - [User Stories](#user-stories)
 - [Wireframes](#wireframes)
 - [Data Models](#data-models)
-- [Milestones](#milestones)
 
 ## Scope
 
