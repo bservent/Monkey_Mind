@@ -28,7 +28,6 @@ def categories_browse(request):
         meditations = Meditation.objects.filter(category_id=category.id)
         category_data = { 'category_name' : category.name, 'meditations' : meditations }
         meditations_data.append(category_data)
-        print(meditations_data)
     return render(request, 'browse.html', { 'meditations_data' : meditations_data })
 
 
@@ -55,7 +54,6 @@ def create_profile(request, user_id):
         else:
             error_message='Invalid sign-up try again'
     else: 
-        # profile_form = Profile_Form(instance=request.user.profile)
         profile_form = Profile_Form()
         context = {'profile_form': profile_form}
         return render(request, 'create_profile.html', context)
