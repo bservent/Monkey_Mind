@@ -4,16 +4,22 @@
     <div class="modal-header">
         <h3 class="mb-0">Login</h3>
     </div>
-    <div class="modal-body py-4">
-        <form class="form  mx-auto w-75" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST" action="{% url 'signin' %}">
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn" value="login">
+        <input type="hidden" name="next" value="{{ next }}">
+    </form>
+   {% comment %}  <div class="modal-body py-4">
+        <form class="form  mx-auto w-75" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST" action="{% url 'signin' %}"> {% endcomment %}
         
         {% comment %} <form action="{% url 'login' %}" method="POST"> {% endcomment %}
             
-            {% csrf_token %}
+           {% comment %}  {% csrf_token %} {% endcomment %}
 
 
-            <div class="form-group">
-                <a href="{% url 'register' %}" class="float-right text-info h6">New user?</a>
+           {% comment %}  <div class="form-group">
+                <a href="{% url 'register' %}" class="float-right text-info h6">New user?</a> {% endcomment %}
 {% comment %}                 <label for="username">Username</label>
                 <input type="text" class="form-control form-control-lg" name="username" id="id_username" required>
                 
@@ -21,13 +27,13 @@
             <div class="form-group">
                 <label>Password</label>
                 <input type="password" class="form-control form-control-lg" name="password" id="id_password" required autocomplete="new-password"> {% endcomment %}
-            </div>
+            {% comment %} </div> {% endcomment %}
 
-                {% csrf_token %}
+{% comment %}                 {% csrf_token %}
                 {{ form.as_p }}
                 
                 <input type="submit" class="btn btn-info btn-lg float-right" id="btnLogin" value="login">
-                <input type="hidden" name="next" value="{{ next }}">
+                <input type="hidden" name="next" value="{{ next }}"> {% endcomment %}
             </div>
         </form>
     </div>
