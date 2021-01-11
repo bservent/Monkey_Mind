@@ -3,6 +3,7 @@ from . import views
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('accounts/', include('django.contrib.auth.urls')),
     path('', views.home, name='home'),
     path('browse/', views.categories_browse, name='browse'),
     path('meditation/<int:meditation_id>/', views.meditation_detail, name='meditation_detail'),

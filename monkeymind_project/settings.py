@@ -132,4 +132,6 @@ STATIC_ROOT = (
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+LOGIN_REDIRECT_URL = '/profiles/'
+
 django_on_heroku.settings(locals())
