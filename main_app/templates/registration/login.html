@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="modal-header">
+        <h3 class="mb-0">Login</h3>
+    </div>
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn" value="login">
+        <input type="hidden" name="next" value="{{ next }}">
+    </form>
+   {% comment %}  <div class="modal-body py-4">
+        <form class="form  mx-auto w-75" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST" action="{% url 'signin' %}"> {% endcomment %}
+        
+        {% comment %} <form action="{% url 'login' %}" method="POST"> {% endcomment %}
+            
+           {% comment %}  {% csrf_token %} {% endcomment %}
+
+
+           {% comment %}  <div class="form-group">
+                <a href="{% url 'register' %}" class="float-right text-info h6">New user?</a> {% endcomment %}
+{% comment %}                 <label for="username">Username</label>
+                <input type="text" class="form-control form-control-lg" name="username" id="id_username" required>
+                
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control form-control-lg" name="password" id="id_password" required autocomplete="new-password"> {% endcomment %}
+            {% comment %} </div> {% endcomment %}
+
+{% comment %}                 {% csrf_token %}
+                {{ form.as_p }}
+                
+                <input type="submit" class="btn btn-info btn-lg float-right" id="btnLogin" value="login">
+                <input type="hidden" name="next" value="{{ next }}"> {% endcomment %}
+            </div>
+        </form>
+    </div>
+
+
+{% endblock content %}
