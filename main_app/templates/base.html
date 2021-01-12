@@ -33,9 +33,18 @@
           <li class="nav-item active">
             <a class="nav-link" href="/browse">Browse<span class="sr-only">(current)</span></a>
           </li>
+          {% if user.is_authenticated %}
+       {% comment %}    <li class="nav-item active">
+            <a class="nav-link" href="{% url 'profile' %}">{{ request.user.profile.name }}<span class="sr-only">(current)</span></a>
+          </li> {% endcomment %}
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'logout' %}">Log Out<span class="sr-only">(current)</span></a>
+          </li>
+          {% else %}
           <li class="nav-item active">
             <a class="nav-link" href="/signin">Sign-in<span class="sr-only">(current)</span></a>
           </li>
+          {% endif %}
         </ul>
         <form class="form-inline my-2 my-md-0">
           <input class="form-control" type="text" placeholder="Search" aria-label="Search">
