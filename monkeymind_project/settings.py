@@ -134,4 +134,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 LOGIN_REDIRECT_URL = '/browse/'
 
+LOGOUT_REDIRECT_URL = '/'
+
 django_on_heroku.settings(locals())
