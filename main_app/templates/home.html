@@ -21,10 +21,15 @@
         <div class="nav">
             <a  id="nav" class="nav-link active" href="{% url 'browse' %}">Browse</a>
         </div>
+        {% if user.is_authenticated %}
+        <div>
+            <a id="sign-in"class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </div>
+        {% else %}
         <div>
             <a id="sign-in"class="nav-link" href="{% url 'login' %}">Sign-in</a>
         </div>
-    
+        {% endif %}
       </nav>
     </div>
   </header>
