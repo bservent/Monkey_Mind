@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Meditation, Profile, Category
 from main_app.forms import Profile_Form
 from django.http import HttpResponse
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
 
 
 #-----------------------------------------------------------------------------#
