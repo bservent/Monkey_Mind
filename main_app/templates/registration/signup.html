@@ -26,9 +26,9 @@
           {% if error_message %}
             <p>{{ error_message }}</p>
           {% endif %}
-          <div class="d-flex justify-content-center mt-3 login_container">
+          {% comment %} <div class="d-flex justify-content-center mt-3 login_container">
             <a class="signin-button" href="{% url 'create_profile' user.id %}">Signin</a>
-          </div>
+          </div> {% endcomment %}
         </form>
       </div>
     </div>
