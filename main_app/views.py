@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Meditation, Profile, Category
 from main_app.forms import Profile_Form
 from django.http import HttpResponse
-from django.contrib.auth import login
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 
 #-----------------------------------------------------------------------------#
@@ -34,10 +34,10 @@ def categories_browse(request):
 def profile(request, user_id):
     meditations = Meditation.objects.filter(user=request.user.id)
     profiles = Profile.objects.filter(user=request.user)
-    context = { 'meditations' : meditations, 'profile' : request.user, 'profile' :profile }
+    context = { 'meditations' : meditations, 'profile' : request.user, 'profile' : profile }
     return render(request, 'profile.html', context)
 
-def create_profile(request, user_id):
+def create_profile(request):
     error_message=''
     if request.method == 'POST':
         Profile.objects.get_or_create(user=request.user)
@@ -105,8 +105,9 @@ def signup(request):
             user = form.save()
             login(request, user)
             return redirect('create_profile')
+        else:
+            error_message = 'INVALID SIGNUP -- PLEASE TRY AGAIN'
     else:
-        error_message = 'INVALID SIGNUP -- PLEASE TRY AGAIN'
         form = UserCreationForm()
-        context = {'form': form, 'error_message': error_message}
-        return render(request, 'registration/signup.html', context)
+    context = {'form': form, 'error_message': error_message}
+    return render(request, 'registration/signup.html', context)
