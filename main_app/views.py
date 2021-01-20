@@ -4,6 +4,7 @@ from main_app.forms import Profile_Form
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.decorators import login_required
 
 
 #-----------------------------------------------------------------------------#
@@ -31,12 +32,14 @@ def categories_browse(request):
 #                                P R O F I L E                                #
 #-----------------------------------------------------------------------------#
 
+@login_required
 def profile(request, user_id):
     meditations = Meditation.objects.filter(user=request.user.id)
     profiles = Profile.objects.filter(user=request.user)
     context = { 'meditations' : meditations, 'profile' : request.user, 'profile' : profile }
     return render(request, 'profile.html', context)
 
+@login_required
 def create_profile(request):
     error_message=''
     if request.method == 'POST':
@@ -54,6 +57,7 @@ def create_profile(request):
         context = {'profile_form': profile_form}
         return render(request, 'create_profile.html', context)
 
+@login_required
 def edit_profile(request, user_id):
     sel_profile = Profile.objects.get(user_id=user_id)
     if request.method == 'POST':
@@ -66,6 +70,7 @@ def edit_profile(request, user_id):
         context = { 'profile' : sel_profile, 'profile_form': profile_form }
         return render(request, 'edit_profile.html', context)
 
+@login_required
 def delete_profile(request, user_id):
     Profile.objects.get(user_id=user_id).delete()
     return redirect('/')
